@@ -1,0 +1,20 @@
+<h1>Advertisements</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Contact Details</th>
+    <th></th>
+  </tr>
+  <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.title %></td>
+        <td><%= ad.description %></td>
+        <td><%= ad.contact_details %></td>
+        <td>
+          <%= label_tag :approved, "Approved" %>
+          <%= check_box_tag :approved, ad.approved %>
+        </td>
+      </tr>
+  <% end %>
+</table><br/>

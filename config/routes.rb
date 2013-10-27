@@ -1,4 +1,5 @@
 Advert::Application.routes.draw do
+  get "ads/new"
   #get "users/new"
  # get "admin/dashboard"
   #get "welcome/index"
@@ -7,9 +8,12 @@ Advert::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :users
+  resources :ads
+  resources :visitors
   root 'welcome#index'
   match '/signup',  to: 'users#new',  via: 'get'
   get 'admin' => 'admin#dashboard', as: :admin
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
