@@ -1,6 +1,6 @@
-class CreateContacts < ActiveRecord::Migration
+class CreateVisitors < ActiveRecord::Migration
   def change
-    create_table :contacts do |t|
+    create_table :visitors do |t|
       t.string :name
       t.string :email
 

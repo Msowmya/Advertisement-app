@@ -11,7 +11,11 @@ Advert::Application.routes.draw do
   resources :ads
   resources :visitors
   root 'welcome#index'
+  resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',  via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
   get 'admin' => 'admin#dashboard', as: :admin
 
   # Example of regular route:

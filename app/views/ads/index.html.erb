@@ -1,9 +1,10 @@
-<h1>Advertisements</h1>
+<h1>All Advertisements</h1>
 <table>
   <tr>
     <th>Title</th>
     <th>Description</th>
     <th>Contact Details</th>
+    <th></th>
     <th></th>
   </tr>
   <% @ads.each do |ad| %>
@@ -15,6 +16,7 @@
           <%= label_tag :approved, "Approved" %>
           <%= check_box_tag :approved, ad.approved %>
         </td>
+        <td><%= link_to "Post Contact Details", new_visitor_path %></td>
       </tr>
   <% end %>
 </table><br/>
