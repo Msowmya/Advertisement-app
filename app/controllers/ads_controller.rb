@@ -1,26 +1,27 @@
 class AdsController < ApplicationController
-  def new
-    @ad = Ad.new
-  end
-  def show
-    @ad = Ad.find(params[:id])
-  end
+ before_action :signed_in_user, only: [:create,:index, :destroy]
+
   def index
     @ads = Ad.all
   end
   def create
-    @ad = Ad.new(ad_params)
+    @ad = current_user.ads.build(ad_params)
     if @ad.save
-      redirect_to @ad
+      redirect_to root_url
+
     else
-      render 'new'
+      render 'welcome/index'
     end
-  end
 
+  end
+  def destroy
+    Ad.find(params[:id]).destroy
+    redirect_to ads_url
+
+  end
   private
-
   def ad_params
-    params.require(:ad).permit(:title, :description, :contact_details)
-
+    params.require(:ad).permit(:title, :description,:contact_details)
   end
+
 end

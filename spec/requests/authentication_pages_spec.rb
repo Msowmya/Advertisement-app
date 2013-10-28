@@ -42,4 +42,8 @@ describe "AuthenticationPage" do
 
       end
     end
+   describe "visiting the ad index" do
+     before {visit ads_path }
+     it { should have_content('Sign in')}
+   end
   end

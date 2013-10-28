@@ -1,16 +1,2 @@
 <%= link_to "Advertisements", ads_path %> <br/><br>
-<h1>All visitors</h1>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-  </tr>
-  <% @visitors.each do |visitor| %>
-      <tr>
-        <td><%= visitor.name %></td>
-        <td><%= visitor.email %></td>
-      </tr>
-  <% end %>
-</table><br/>
-
 

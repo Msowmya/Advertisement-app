@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028015852) do
+ActiveRecord::Schema.define(version: 20131028170121) do
 
   create_table "ads", force: true do |t|
     t.string   "title"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20131028015852) do
     t.datetime "updated_at"
     t.boolean  "approved"
   end
+
+  add_index "ads", ["user_id"], name: "index_ads_on_user_id", using: :btree
 
   create_table "advertises", force: true do |t|
     t.string   "name"

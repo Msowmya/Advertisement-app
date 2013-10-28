@@ -1,22 +1,28 @@
-<h1>All Advertisements</h1>
+<h1>All Ads</h1>
 <table>
   <tr>
     <th>Title</th>
     <th>Description</th>
     <th>Contact Details</th>
+    <th>User_id</th>
     <th></th>
     <th></th>
+
   </tr>
   <% @ads.each do |ad| %>
       <tr>
+
         <td><%= ad.title %></td>
         <td><%= ad.description %></td>
         <td><%= ad.contact_details %></td>
+        <td><%= ad.user_id %></td>
+        <td><%= link_to "delete", ad, method: :delete,
+                    data: { confirm: "You sure?" } %>  </td>
         <td>
           <%= label_tag :approved, "Approved" %>
           <%= check_box_tag :approved, ad.approved %>
         </td>
-        <td><%= link_to "Post Contact Details", new_visitor_path %></td>
+
       </tr>
   <% end %>
 </table><br/>

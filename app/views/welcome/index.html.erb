@@ -1,4 +1,17 @@
-<h1>Welcome to my website</h1>
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <section>
+          <%= render 'shared/ad_form' %>
+        </section>
+      </aside>
+    </div>
+<% else %>
+
+    <h1>Welcome to my website</h1>
 <h1><%= link_to "Sign up now!", signup_path %> </h1>
 <div id="content">
   <div class="post">
@@ -36,4 +49,4 @@
     </div>
   </div>
 </div>
-
+<% end %>

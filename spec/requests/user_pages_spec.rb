@@ -4,9 +4,19 @@ describe "UserPage", :type => :feature do
   subject { page }
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    #let!(:m1) { FactoryGirl.create(:ad, user: user, title: "Foo") }
+    #let!(:m2) { FactoryGirl.create(:ad, user: user, title: "Bar") }
+
+
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
+    describe "ads" do
+      #it { should have_title(m1.title)}
+     # it { should have_title(m2.title)}
+      #it { should have_title(user.ads.count)}
+
+    end
 
   end
 

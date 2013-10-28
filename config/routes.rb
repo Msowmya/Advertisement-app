@@ -8,7 +8,7 @@ Advert::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :users
-  resources :ads
+  resources :ads, only: [:create,:index, :destroy]
   resources :visitors
   root 'welcome#index'
   resources :sessions, only: [:new, :create, :destroy]
