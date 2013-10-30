@@ -1,12 +1,12 @@
 class VisitorsController < ApplicationController
   def new
-   @visitor = Visitor.new
+
   end
   def index
-    @visitors = Visitor.all
+
   end
   def show
-    @visitor = Visitor.find(params[:id])
+
   end
   def create
     @visitor = Visitor.new(visitor_params)

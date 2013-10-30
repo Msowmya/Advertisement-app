@@ -18,10 +18,12 @@
         <td><%= ad.user_id %></td>
         <td><%= link_to "delete", ad, method: :delete,
                     data: { confirm: "You sure?" } %>  </td>
-        <td>
-          <%= label_tag :approved, "Approved" %>
-          <%= check_box_tag :approved, ad.approved %>
-        </td>
+         <td>
+
+             <%= label_tag :approved, "Approved" %>
+             <%= check_box_tag :approved %>
+
+         </td>
 
       </tr>
   <% end %>
